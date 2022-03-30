@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 const todoRoutes = require('./routes/todos')
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const app = express()
 
@@ -15,6 +15,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(todoRoutes)
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'))
+})
 
 async function start() {
   try {

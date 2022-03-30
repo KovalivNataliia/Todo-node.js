@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000/api/users/';
+const url = 'api/todos/';
 
 const button = document.querySelector('.btn');
 
